@@ -28,6 +28,13 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach(value => {
+    let newNum = value+'!';
+    newArr.push(newNum);
+  });
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +47,13 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach(name => {
+    let newNum = name.toUpperCase();
+    newArr.push(newNum);
+  });
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,12 +74,12 @@ const greeting = (word) => {
 
 const speaker = (words, callback) => {
   // Solution code here...
-  let newArray = [];
+  let newArr = [];
   words.forEach(value => {
     let newString = callback(value)
-    newArray.push(newString)
+    newArr.push(newString)
   })
-  return newArray;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,10 +100,14 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
-
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let i = 0; i < times; i ++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,7 +130,17 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let listOfArr = [];
+  availableItems.forEach(value => {
+    if (value.available) {
+
+      listOfArr.push(value.name);
+
+    }
+  });
+  return listOfArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
